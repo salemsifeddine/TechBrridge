@@ -1,0 +1,487 @@
+{% load static %}
+<html lang="en"><head>
+
+    <meta charset="UTF-8">
+    
+  <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  <meta name="apple-mobile-web-app-title" content="CodePen">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  
+  <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  
+  
+    <title>CodePen - Rebound: Lada Life</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/css/uikit.min.css">
+    <script src="{% static 'js/jquery.js' %}"></script>
+  <style>
+  
+  
+  body {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #E74824;
+    font-family: "Source Sans Pro", sans-serif;
+    transition: background-color 0.5s ease-in-out;
+    -webkit-font-smoothing: antialiased;
+    background-color: transparent !important;
+  }
+  
+  .Interstitial-wrapper {
+    box-sizing: border-box;
+    /* width: 686px; */
+    /* padding: 20px; */
+    margin: 0 auto;
+  }
+  
+  .Canvas {
+    position: relative;
+    background-color: #FFFFFF;
+    /* width: 100%; */
+    width: 686px; 
+    margin: 25px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 456px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0%,10%);
+  }
+  
+  .Canvas-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    z-index: 20;
+  }
+  
+  .Canvas-header-logo {
+    width: 62px;
+    height: 22px;
+    /* background: transparent url("https://image.ibb.co/bMgqOv/lada_logo_2x.png") 0 0 no-repeat; */
+    background: transparent url("{% static 'images/suzukilogo.png' %}") 0 0 no-repeat;
+    background-size: 62px 22px;
+  }
+  
+  .Canvas-slides {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-wrapper {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .Car {
+    padding-top: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+  
+  .Car-name,
+  .Car-moto,
+  .Car-link {
+    position: relative;
+    z-index: 3;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .Car-name {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 69px;
+    height: 80px;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  .Car-name small {
+    font-size: 34px;
+  }
+  
+  .Car-moto {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  .Car-moto + .Car-moto {
+    margin-left: 30px;
+    margin-bottom: 8px;
+  }
+  
+  .Car-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 60px;
+  }
+  
+  .Car-decor {
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .Car-image {
+    position: absolute;
+    top: 120px;
+    right: 5px;
+    z-index: 2;
+  }
+  
+  .Car--niva .Car-link {
+    color: #E74824;
+  }
+  .Car--niva .Car-image {
+    width: 420px;
+    height: 266px;
+    /* background: transparent url("https://preview.ibb.co/cnSrVa/niva_clearcut_2x.png") 0 0 no-repeat; */
+    background: transparent url("{% static 'images/red.png' %}") 0 0 no-repeat;
+    background-size: 430px 266px;
+  }
+  .Car--niva .Car-decor {
+    width: 60px;
+    height: 100%;
+  }
+  .Car--niva .Car-decor::before {
+    width: 60px;
+    height: 100%;
+    display: block;
+    content: "";
+    background: #E74824;
+    transform: skewX(30deg);
+  }
+  .Car--niva .Car-decor.one {
+    right: 40px;
+  }
+  .Car--niva .Car-decor.two {
+    right: 130px;
+  }
+  .Car--niva .Car-decor.three {
+    right: 220px;
+  }
+  
+  .Car--riva .Car-link {
+    color: #6D889F;
+  }
+  .Car--riva .Car-image {
+    width: 420px;
+    height: 233px;
+    top: 140px;
+    /* background: transparent url("https://image.ibb.co/cgiLOv/riva_clearcut.png") 0 0 no-repeat; */
+    background: transparent url("{% static 'images/blue.png' %}") 0 0 no-repeat;
+    background-size: 430px 233px;
+  }
+  .Car--riva .Car-decor::before {
+    display: block;
+    content: "";
+    width: 190px;
+    height: 190px;
+    background: radial-gradient(circle at 111% -6%, #597389, #8babcd);
+    transform: rotate(45deg);
+  }
+  .Car--riva .Car-decor.one {
+    width: 165px;
+    height: 165px;
+    top: 60px;
+    right: 200px;
+  }
+  .Car--riva .Car-decor.two {
+    width: 162px;
+    height: 162px;
+    top: 200px;
+    right: 80px;
+  }
+  .Car--riva .Car-decor.three {
+    width: 190px;
+    height: 190px;
+    top: 24px;
+    right: 24px;
+  }
+  
+  .swiper-container-horizontal > .swiper-pagination {
+    bottom: 24px;
+    background: #EFF0F2;
+    border-radius: 3px;
+    width: auto;
+    left: 50%;
+    overflow: hidden;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+    border: solid 1px #E9ECEF;
+    transform: translateX(-50%);
+  }
+  .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet {
+    background: none;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    margin: 0;
+  }
+  .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet::before {
+    display: block;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 700;
+    padding: 10px 30px;
+    color: #495057;
+    cursor: pointer;
+  }
+  .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet:nth-child(1)::before {
+    content: "Swift RED";
+  }
+  .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet:nth-child(2)::before {
+    content: "Swift BLUE";
+  }
+  .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+    background: #FFFFFF;
+  }
+
+
+  /*  */
+  .sectionLogo{
+    width:100vw;
+    height:100vh;
+
+  }
+  
+  .sectioncar{
+    width:100%;
+    height:100vh
+  }
+
+    body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(100deg, rgba(202,22,33,0.5), rgba(66,77,188,0.7)), url("/static/images/tesla.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+    header {
+      text-align: center;
+      line-height: 50px;
+      margin: 20px 0;
+      padding: 10px;
+      color: white;
+    }
+    #title {
+      font-size: 2.5rem;
+      font-weight: 650;
+      color:#fff;
+    }
+    #description {
+      font-size: 1.5rem;
+    }
+
+    .section--main {
+      min-height: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      background-color: coral;
+      padding-left: 15px;
+      background-color: #48484899;
+    }
+
+    .entry-card {
+      min-height: 350px;
+    }
+
+    #page-title {
+      cursor: pointer;
+      font-size:45px;
+    }
+    .uk-section-secondary{
+
+      background-color:transparent;
+    }
+  </style>
+  
+    <script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+    <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+  
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  </head>
+  
+  <body translate="no" style="background-color: rgb(109, 136, 159);">
+    <header>
+      <h1 id="title">Choose Your Car</h1>
+      <p id="description">if You can't find your car , please let us know!</p>
+    </header>
+    <section class="Interstitial-wrapper">
+      <div class="sectionLogo">
+        <div class="uk-section uk-section-secondary uk-preserve-color uk-light section--main">
+          <div class="uk-container uk-container-small">
+         
+           <h1 class="uk-heading-primary uk-text-center" id="page-title">Enter Your Car Model</h1>
+         
+           <div class="uk-margin">
+            <form id="formcarseach" class="uk-search uk-search-large search-input uk-border-rounded uk-box-shadow-large" method="get">
+             <button href="" class="uk-search-icon-flip uk-search-icon uk-icon" id="search-button" uk-search-icon=""><svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" ratio="1"><circle fill="none" stroke="#000" stroke-width="1.8" cx="17.5" cy="17.5" r="16.5"></circle><line fill="none" stroke="#000" stroke-width="1.8" x1="38" y1="39" x2="29" y2="30"></line></svg></button>
+             <input name="carquery" id="search-input" class="uk-search-input" type="search" placeholder="Search Wikipedia...">
+            </form>
+           </div>
+           <div class="section--box uk-text-center">
+            <h2>or search for</h2>
+            <a class="uk-button uk-button-default" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Article</a>
+           </div>
+         
+           <div class="uk-margin-large-top">
+         
+            <div class="uk-child-width-1-2@m uk-grid-small uk-grid uk-grid-stack" id="output-container" uk-grid="">
+         
+            </div>
+         
+           </div>
+         
+         
+          </div>
+         </div>
+      </div>
+      
+      <!-- scnd 100vh -->
+      <div class="sectioncar">
+        <div class="Canvas">
+  
+          <header class="Canvas-header">
+            <figure class="Canvas-header-logo"></figure>
+            <div class="Canvas-header-menu"></div>
+          </header>
+      
+          <main class="Canvas-slides">
+            <div class="swiper-container swiper-container-horizontal" style="cursor: grab;">
+              <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><div class="Car Car--riva swiper-slide swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="1" style="width: 646px;">
+                  <h1 class="Car-name" data-swiper-parallax="-100" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">Riva<small>&nbsp;(VAZ 2105)</small></h1>
+                  <p class="Car-moto" data-swiper-parallax="-150" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">You’d expect a luxury car</p>
+                  <p class="Car-moto" data-swiper-parallax="-200" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">to have all these features.</p>
+                  <a class="Car-link" data-swiper-parallax="-250" href="https://en.wikipedia.org/wiki/Lada_Riva" target="_blank" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">Read more →</a>
+                  <figure class="Car-image" data-swiper-parallax="-400" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"></figure>
+                  <div class="Car-decor one" data-swiper-parallax="-700" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"></div>
+                  <div class="Car-decor two" data-swiper-parallax="-600" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"></div>
+                  <div class="Car-decor three" data-swiper-parallax="-500" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"></div>
+                </div>
+      
+                <div class="Car Car--niva swiper-slide swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="width: 646px;">
+                  <h1 class="Car-name" data-swiper-parallax="-100" style="transform: translate3d(100px, 0px, 0px); transition-duration: 0ms;">swift<small>&nbsp;4x4</small></h1>
+                  <p class="Car-moto" data-swiper-parallax="-150" style="transform: translate3d(150px, 0px, 0px); transition-duration: 0ms;">Always broken, but</p>
+                  <p class="Car-moto" data-swiper-parallax="-200" style="transform: translate3d(200px, 0px, 0px); transition-duration: 0ms;">never broken down.</p>
+                  <a class="Car-link" data-swiper-parallax="-250" href="https://en.wikipedia.org/wiki/LADA_4x4" target="_blank" style="transform: translate3d(250px, 0px, 0px); transition-duration: 0ms;">Read more →</a>
+                  <figure class="Car-image" data-swiper-parallax="-400" style="transform: translate3d(400px, 0px, 0px); transition-duration: 0ms;"></figure>
+                  <div class="Car-decor one" data-swiper-parallax="-700" style="transform: translate3d(700px, 0px, 0px); transition-duration: 0ms;"></div>
+                  <div class="Car-decor two" data-swiper-parallax="-600" style="transform: translate3d(600px, 0px, 0px); transition-duration: 0ms;"></div>
+                  <div class="Car-decor three" data-swiper-parallax="-500" style="transform: translate3d(500px, 0px, 0px); transition-duration: 0ms;"></div>
+                </div>
+      
+                <div class="Car Car--riva swiper-slide swiper-slide-duplicate-active" data-swiper-slide-index="1" style="width: 646px;">
+                  <h1 class="Car-name" data-swiper-parallax="-100" style="transform: translate3d(100px, 0px, 0px); transition-duration: 0ms;">Riva<small>&nbsp;(VAZ 2105)</small></h1>
+                  <p class="Car-moto" data-swiper-parallax="-150" style="transform: translate3d(150px, 0px, 0px); transition-duration: 0ms;">You’d expect a luxury car</p>
+                  <p class="Car-moto" data-swiper-parallax="-200" style="transform: translate3d(200px, 0px, 0px); transition-duration: 0ms;">to have all these features.</p>
+                  <a class="Car-link" data-swiper-parallax="-250" href="https://en.wikipedia.org/wiki/Lada_Riva" target="_blank" style="transform: translate3d(250px, 0px, 0px); transition-duration: 0ms;">Read more →</a>
+                  <figure class="Car-image" data-swiper-parallax="-400" style="transform: translate3d(400px, 0px, 0px); transition-duration: 0ms;"></figure>
+                  <div class="Car-decor one" data-swiper-parallax="-700" style="transform: translate3d(700px, 0px, 0px); transition-duration: 0ms;"></div>
+                  <div class="Car-decor two" data-swiper-parallax="-600" style="transform: translate3d(600px, 0px, 0px); transition-duration: 0ms;"></div>
+                  <div class="Car-decor three" data-swiper-parallax="-500" style="transform: translate3d(500px, 0px, 0px); transition-duration: 0ms;"></div>
+                </div>
+      
+              <div class="Car Car--niva swiper-slide swiper-slide-duplicate swiper-slide-prev swiper-slide-duplicate-next" data-swiper-slide-index="0" style="width: 646px;">
+                  <h1 class="Car-name" data-swiper-parallax="-100" style="transform: translate3d(100px, 0px, 0px); transition-duration: 0ms;">swift<small>&nbsp;4x4</small></h1>
+                  <p class="Car-moto" data-swiper-parallax="-150" style="transform: translate3d(150px, 0px, 0px); transition-duration: 0ms;">Always broken, but</p>
+                  <p class="Car-moto" data-swiper-parallax="-200" style="transform: translate3d(200px, 0px, 0px); transition-duration: 0ms;">never broken down.</p>
+                  <a class="Car-link" data-swiper-parallax="-250" href="https://en.wikipedia.org/wiki/LADA_4x4" target="_blank" style="transform: translate3d(250px, 0px, 0px); transition-duration: 0ms;">Read more →</a>
+                  <figure class="Car-image" data-swiper-parallax="-400" style="transform: translate3d(400px, 0px, 0px); transition-duration: 0ms;"></figure>
+                  <div class="Car-decor one" data-swiper-parallax="-700" style="transform: translate3d(700px, 0px, 0px); transition-duration: 0ms;"></div>
+                  <div class="Car-decor two" data-swiper-parallax="-600" style="transform: translate3d(600px, 0px, 0px); transition-duration: 0ms;"></div>
+                  <div class="Car-decor three" data-swiper-parallax="-500" style="transform: translate3d(500px, 0px, 0px); transition-duration: 0ms;"></div>
+                </div></div>
+      
+              <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet">swift</span><span class="swiper-pagination-bullet swiper-pagination-bullet-active">RIVA</span></div>
+            </div>
+          </main>
+      
+        </div>
+      </div>
+    
+  </section>
+  
+      <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+        <script id="rendered-js">
+  $(document).ready(function () {
+    //initialize swiper when document ready  
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: 1600,
+      loop: true,
+      parallax: true,
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      grabCursor: true,
+      speed: 900,
+  
+      onTransitionStart(mySwiper) {
+        if ($(".swiper-slide-active").hasClass("Car--riva")) {
+          $("body").css("background-color", "#6D889F");
+        } else {
+          $("body").css("background-color", "#E74824");
+        }
+      } });
+
+
+      var formcarsubmit=document.getElementById("formcarseach")
+
+      formcarsubmit.addEventListener("submit",function(e){
+        e.preventDefault();
+        window.scroll({
+  top: 1200, 
+  left: 0, 
+  behavior: 'smooth'
+});
+      })
+  
+  });
+  //# sourceURL=pen.js
+      </script>
+  
+    
+  
+  
+  
+  
+   
+  </body></html>

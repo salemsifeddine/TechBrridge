@@ -1,0 +1,175 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="map.css">
+</head>
+<body>
+    <div class='container'>
+        <div class='madeby'>created by <a href='http://www.selftaughtjs.com' target='_blank'>Tobias Guse</a></div>
+        
+        <div class='row'>
+      
+          <div class='stats-element'>
+            <div class='element-header'>Regional Performance Metrics</div>
+            <div class='stats-container' id='stats-element'>
+              <div class='map-container'>
+                <div class='position-marker'></div>
+                <div class='position-marker no2'></div>
+                <div class='position-marker no3'></div>
+                <div class='position-marker no4'></div>
+                <div class='position-marker no5'></div>
+                <div class='position-marker no6'></div>
+              </div>
+              <div class='stats-table'>
+                <div class='table-header'>
+                  <div class='country-select'>EMEA</div>
+                  <div class='country-select'>APAC</div>
+                  <div class='country-select'>NCSA</div>
+                </div>
+                <table class='performance-table'>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>Orders</td>
+                      <td>Returns</td>
+                      <td>Basket Value</td>
+                      <td>Marketing Cost</td>
+                      <td>Operational Cost</td>
+                      <td>Revenue</td>
+                    </tr>
+                    <tr>
+                      <td class='table-desc'>Today</td>
+                      <td>8</td>
+                      <td>0</td>
+                      <td>210$</td>
+                      <td>10%</td>
+                      <td>13%</td>
+                      <td>1680$</td>
+                    </tr>
+                    <tr>
+                      <td class='table-desc'>Week to Date</td>
+                      <td>21</td>
+                      <td>0</td>
+                      <td>287$</td>
+                      <td>18%</td>
+                      <td>12%</td>
+                      <td>6027$</td>
+                    </tr>
+                    <tr>
+                      <td class='table-desc'>Month to Date</td>
+                      <td>47</td>
+                      <td>2</td>
+                      <td>277$</td>
+                      <td>17%</td>
+                      <td>20%</td>
+                      <td>13019$</td>
+                    </tr>
+                    <tr>
+                      <td class='table-desc'>Year to Date</td>
+                      <td>259</td>
+                      <td>11</td>
+                      <td>312$</td>
+                      <td>15%</td>
+                      <td>16%</td>
+                      <td>80808$</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class='order-element'>
+            <div class='element-header'></div>
+            <div class='order-scroll up' id='order-scrollup'><i class="fa fa-chevron-up"></i></div>
+            <div class='order-container' id='order-container'>
+      
+              <div class='order-item' id='order-item'>
+                <h1>Order #413-8148622</h1>
+                <p>Status: <span class='main-color'>Dispatched</span><br>Tracking Number: 9851 1199 72</p>
+                <p>Order Date: 12/24/16<br> Customer Contact: test.clark@gmail.com</p>
+      
+              </div>
+              <div class='order-item'>
+                <h1>Order #313-55416218</h1>
+                <p>Status: <span class='main-color'>Dispatched</span><br>Tracking Number: 1431 2349 11</p>
+                <p>Order Date: 12/24/16<br> Customer Contact: random.guy@gmail.com</p>
+              </div>
+              <div class='order-item highlight'>
+                <h1>Order #535-71122781</h1>
+                <p>Status: <span class='highlight'>Awaiting Shipment</span><br>Tracking Number: -</p>
+                <p>Order Date: 12/24/16<br> Customer Contact: aname.store@aol.com</p>
+              </div>
+              <div class='order-item highlight'>
+                <h1>Order #455-51133742</h1>
+                <p>Status: <span class='highlight'>Awaiting Shipment</span><br>Tracking Number: -</p>
+                <p>Order Date: 12/24/16<br> Customer Contact: special.order@yahoo.com</p>
+              </div>
+              <div class='order-item hold'>
+                <h1>Order #734-45422551</h1>
+                <p>Status: <span class='inactive'>On Hold</span><br>Tracking Number: -</p>
+                <p>Order Date: 12/20/16<br> Customer Contact: nobody123@gmail.com</p>
+              </div>
+              <div class='order-item hold'>
+                <h1>Order #532-13422331</h1>
+                <p>Status: <span class='inactive'>On Hold</span><br>Tracking Number: -</p>
+                <p>Order Date: 12/19/16<br> Customer Contact: random333.star@gmail.com</p>
+              </div>
+              <div class='order-item hold'>
+                <h1>Order #922-25491351</h1>
+                <p>Status: <span class='inactive'>On Hold</span><br>Tracking Number: -</p>
+                <p>Order Date: 12/19/16<br> Customer Contact: santa@gmail.com</p>
+              </div>
+            </div>
+            <div class='order-scroll' id='order-scrolldown'><i class="fa fa-chevron-down"></i></div>
+          </div>
+        </div>
+        <div class='element-header social'>Workflow</div>
+      
+        <div class='row todo'>
+          <div class='social-element'>
+            <div class='chatbox-container'>
+              <div class='anna-image'></div>
+              <div class='chatbox-left'><span class='username'>Ann:</span>Hi <span class='highlight'>@Jimmy</span>, please make sure to have a look at <a href='#' class='main-color'>#413-8148622</a>, needs dispatch ASAP.</div>
+            </div>
+            <div class='chatbox-container'>
+              <div class='anna-image'></div>
+              <div class='chatbox-left'><span class='username'>Ann:</span>Aw sorry, forgot to attach the updated invoice.</div>
+            </div>
+            <div class='chatbox-container'>
+              <div class='jimmy-image'></div>
+              <div class='chatbox-left'><span class='username'>Jimmy:</span>Heya <span class='highlight'>@Ann</span>, don't you worry - I'm here to save the day. Order is already dispached!</div>
+            </div>
+            <p class='spacing-adjuster'></p>
+            <div class='chat-input'>
+              <textarea rows='1' placeholder='Add a comment to this workflow...'></textarea>
+              <div class='submit-icon'><i class="fa fa-paper-plane-o"></i></div>
+            </div>
+          </div>
+          <div class='todo-element'>
+            <div class='table-header todo'>
+              <div class='country-select'>Files</div>
+              <div class='country-select'>Todos</div>
+            </div>
+            <div class='file-container small'>
+      
+              <ul>
+                <li><span><i class="fa fa-file-pdf-o"></i> invoice#413-814updated.pdf</span></li>
+                <li><i class="fa fa-file-excel-o"></i> revenue-summary.xls</li>
+                <li><i class="fa fa-file-pdf-o"></i> region30_map.pdf</li>
+              </ul>
+      
+      
+              <div class='draghere'><i class="fa fa-lg fa-cloud-upload"></i>Drag new files here</div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
