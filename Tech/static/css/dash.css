@@ -170,6 +170,7 @@ body {
 }
 
 .user-info {
+  color: #9b9ca7;
   margin-left: auto;
   display: flex;
   align-items: center;
