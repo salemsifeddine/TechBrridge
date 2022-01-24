@@ -105,7 +105,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 25px;
+  /* padding: 25px; */
   overflow: auto;
   padding-left: 0;
 }
@@ -562,6 +562,21 @@ body {
   width: 24px;
   margin-left: auto;
   color: #818394;
+}
+.cards.card button {
+  width: 100px;
+  margin-left: auto;
+
+  height: 35px;
+  background-color: #4255d3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition:background .3s ease-in;
+}
+.cards.card button:hover{
+  background-color:#4356d6;
+
 }
 .cards-head {
   display: flex;
@@ -1024,9 +1039,9 @@ body {
     display: none;
   }
 
-  .main-container {
+  /* .main-container {
     padding-left: 25px;
-  }
+  } */
 
   .activity-links,
 .destination {
@@ -2177,4 +2192,39 @@ pper {
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.applicants button {
+  width: 50%;
+ 
+  height: 35px;
+  background-color: #4255d3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background .3s ease-in;
+}
+
+.selctgraphrng{
+  width: 50%;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.selctgraphrng select{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background:#4255d3;
+  color: white;
+}
+.selctgraphrng select option{
+  border: none;
+  outline: none;
+  background:var(--app-bg-dark);
+  margin-top: 2px;
+  
 }

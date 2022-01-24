@@ -452,9 +452,9 @@
     }
   }
   @media (max-width: 800px) {
-    body {
+    /* body {
       padding-top: 100px;
-    }
+    } */
   
     .container {
       width: 575px;
