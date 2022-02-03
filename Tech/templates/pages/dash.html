@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="{% static 'css/dash.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <script crossorigin="anonymous" integrity="sha256-P7u0j5WtRxuIByjSSv/Sf74uwo74XqpbucssHPyizJU=" type="text/javascript" src="https://fast.appcues.com/generic/main/4.32.11/appcues.main.6a7768d5ed9d53bc49d865db745918fcdb33cab3.js" async=""></script>
-</head>
+  
+  </head>
 <body>
     
 
@@ -104,7 +105,15 @@
        <div class="discount-wrapper">
         <div class="discount-info">
          <div class="subtitle">Data took at :</div>
-         <div class="subtitle-count">08.20 pm</div>
+
+         <div class="subtitle-count subtitle-count1">08.20 pm</div>
+         <script>
+           document.querySelector(".subtitle-count1").onload=function(){
+            var todaycount1 = new Date();
+            var timecount1 = todaycount1.getHours() + ":" + todaycount1.getMinutes() ;
+              this.textContent = timecount1
+           }
+         </script>
          <div class="subtitle">Distance:</div>
          <div class="subtitle-count dist">4.5 Km</div>
         </div>
@@ -134,10 +143,10 @@
           <path class="circle-bg" d="M18 2.0845
               a 15.9155 15.9155 0 0 1 0 31.831
               a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-          <path class="circle" stroke-dasharray="64, 100" d="M18 2.0845
+          <path class="circle circleFuel" stroke-dasharray="64, 100" d="M18 2.0845
               a 15.9155 15.9155 0 0 1 0 31.831
               a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-          <text x="18" y="20.35" class="percentage">64%</text>
+          <text x="18" y="20.35" class="percentage percentageFuel">64%</text>
         </svg>
         </div>  
         

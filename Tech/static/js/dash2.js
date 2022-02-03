@@ -7,7 +7,7 @@ gradient.addColorStop(1, 'rgba(0, 199, 214, 0)');
 
 
 var data  = {
-    labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October', 'November','December' ],
+    labels: [ '11', '12', '13', '14', '15', '16', '17','18','19','20', '21','22' ],
     datasets: [{
 			label: 'Applications',
 			backgroundColor: gradient,
@@ -17,6 +17,7 @@ var data  = {
 			data: [60, 45, 80, 30, 35, 55,25,80,40,50,80,50]
     }]
 };
+
 
 var options = {
 	responsive: true,
@@ -63,11 +64,38 @@ var options = {
 	}
 };
 
-var chartInstance = new Chart(chart, {
-    type: 'line',
-    data: data,
-		options: options
-});
+setInterval(() => {
+		setInterval(() => {
+		data["labels"].push(Math.floor(Math.random()*203));
+		data["datasets"][0]["data"].push(Math.floor(Math.random()*100))
+		
+	}, 500);
+	var chartInstance = new Chart(chart, {
+		type: 'line',
+		data: data,
+			options: options
+	});
+
+	
+},2500);
+
+document.querySelector(".offer-button").addEventListener("click",function(){
+	var randomvv=Math.random()*100
+	// percentage
+	var todaycount = new Date();
+    var timecount = todaycount.getHours() + ":" + todaycount.getMinutes() ;
+               
+             
+	document.querySelector(".percentageFuel").textContent = Math.floor(randomvv) + "%"
+	document.querySelector(".circleFuel").attributes[1].nodeValue=randomvv + ", 100"
+
+	if(timecount< 12){
+		document.querySelector(".subtitle-count1").textContent=timecount + " am"
+	}else{
+		document.querySelector(".subtitle-count1").textContent=timecount + " pm"
+	}
+	
+})
 
 document.querySelector('.open-right-area').addEventListener('click', function () {
     document.querySelector('.app-right').classList.add('show');
