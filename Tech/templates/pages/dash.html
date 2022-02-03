@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="{% static 'css/nice.css' %}">
     <link rel="stylesheet" href="{% static 'css/dash.css' %}">
@@ -84,48 +85,19 @@
        </script>
       </div>
      </div>
-     <div class="user-box first-box">
-      <div class="activity card" style="--delay: .2s">
-       <div class="title">User Activities</div>
-       <div class="subtitle">Hoo - is an adaptive Online Courses Application with a wide range of course directions. The students will have a great possibility to study.</div>
-       <div class="activity-links">
-        <div class="activity-link active">Current User</div>
-        <div class="activity-link notify">User Request</div>
-       </div>
-       <div class="destination">
-        <div class="destination-card">
-         <div class="destination-profile">
-          <img class="profile-img" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="" />
-          <div class="destination-length">
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-            <circle cx="12" cy="10" r="3" />
-           </svg>
-           45.4m
-          </div>
-         </div>
-         <div class="destination-points">
-          <div class="point">Traffic Point</div>
-          <div class="sub-point">Brooklyn St, NY</div>
-         </div>
+     <div class="user-box first-box" style="padding: 0;">
+      <div class="activity card" style="--delay: .2s;padding:0">
+        
+        <div id="map" style="padding: 0;">
+
+          <iframe width="100%" height="100%" id="gmap_canvas" 
+          src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+          frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+        </iframe>
         </div>
-        <div class="destination-card">
-         <div class="destination-profile">
-          <img class="profile-img" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
-          <div class="destination-length">
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-            <circle cx="12" cy="10" r="3" />
-           </svg>
-           42.8m
-          </div>
-         </div>
-         <div class="destination-points">
-          <div class="point">Pickup Point</div>
-          <div class="sub-point">Maryland 17, NY</div>
-         </div>
-        </div>
-       </div>
+
+       
+        
       </div>
       <div class="discount card" style="--delay: .4s">
        <div class="title"><i class="fas fa-gas-pump"></i>Fuel Level</div>
@@ -173,48 +145,7 @@
         
        <div class="button offer-button">Update</div>
       </div>
-      <div class="cards-wrapper" style="--delay: .6s">
-       <div class="cards-header">
-         
-       </div>
-       <div class="cards card">
-        <div class="cards-head">
-         <div class="cards-info">
-          <div class="calendar-hour">Data took at :08.20 <span class="am-pm">pm</span></div>
-          <div class="degree">
-           <svg viewBox="0 0 512 512">
-            <circle cx="330.2" cy="240.1" fill="#feb137" r="78.9" />
-            <g fill="#ffd15b">
-             <path d="M320.5 130c-7.4.6-14-5-14.6-12.3l-4.1-47a13.5 13.5 0 0126.9-2.4l4 47c.7 7.4-4.8 14-12.2 14.6z" />
-             <path d="M320.5 130c-7.4.6-14-5-14.6-12.3l-4.1-47a13.5 13.5 0 0126.9-2.4l4 47c.7 7.4-4.8 14-12.2 14.6zM438 228.5c-.6-7.4 4.9-14 12.3-14.6l47-4a13.5 13.5 0 012.4 26.8l-47 4.1c-7.5.7-14-4.8-14.7-12.3zM413 307.7a13.5 13.5 0 0119-1.6l36.2 30.3a13.5 13.5 0 01-17.3 20.7l-36.2-30.4a13.5 13.5 0 01-1.6-19z" />
-             <path d="M413 307.7a13.5 13.5 0 0119-1.6l36.2 30.3a13.5 13.5 0 01-17.3 20.7l-36.2-30.4a13.5 13.5 0 01-1.6-19zM190 120.6a13.5 13.5 0 0119-1.7l36.2 30.4a13.5 13.5 0 01-17.3 20.6l-36.2-30.3a13.5 13.5 0 01-1.7-19zM447.4 98a13.5 13.5 0 011.7 19l-30.4 36.2A13.5 13.5 0 01398 136l30.4-36.2a13.5 13.5 0 0119-1.6z" />
-            </g>
-            <path d="M360 335.4a70.8 70.8 0 00-87.4-74A95 95 0 0085 286a85 85 0 00-3.4 170h273a60.4 60.4 0 005.2-120.6z" fill="#d8ecfe" />
-            <path d="M360 335.4a70.8 70.8 0 00-87.4-74 95 95 0 00-125.7-68.3 95 95 0 0190.6 74.2 70.8 70.8 0 0187.4 74A60.4 60.4 0 01345.6 456h9.2a60.4 60.4 0 005.1-120.6z" fill="#c4e2ff" />
-           </svg>
-           <h2 style="font-size:35px">Fuel level</h2>
-          </div>
-         </div>
-        <button>Update</button>
-        </div>
-        
-         
-       </div>
-      </div>
-      <div class="account-wrapper" style="--delay: .8s">
-       <div class="account-profile">
-        <img src="https://images.unsplash.com/photo-1550314124-301ca0b773ae?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2215&q=80" alt="">
-        <div class="blob-wrap">
-         <div class="blob"></div>
-         <div class="blob"></div>
-         <div class="blob"></div>
-        </div>
-        <div class="account-name">Mike J Morgan</div>
-        <div class="account-title">Taxi Driver</div>
-       </div>
-        
-      </div>
-     </div>
+       
      
      <div class="user-box third-box">
 
@@ -305,8 +236,8 @@
                 </div>
               </div>
               <div class="chart-container-wrapper small">
-                <div class="chart-container">
-                  <div class="chart-container-header">
+                <div class="chart-container" style="height: 100%;">
+                  <!-- <div class="chart-container-header">
                     <h2>Acquisitions</h2>
                     <span href="#">This month</span>
                   </div>
@@ -336,7 +267,7 @@
                     <span class="progress-type">Rejected</span>
                     <span class="progress-amount">8%</span>
                   </div>
-                </div>
+                </div> -->
                 <div class="chart-container applicants">
                   <p>Choose range</p>
                   <div class="selctgraphrng">
@@ -357,7 +288,7 @@
           </div>
 
      </div>
-     <div class="user-box forth-box">
+     <!-- <div class="user-box forth-box">
       <section class="charts mt-4" style="width:100%">
         <div class="chart-container p-3" style="display:flex;flex-direction: column;">
           <h3 class="fs-6 mb-3">Chart title number three</h3>
@@ -368,10 +299,10 @@
         </div>
         </div>
       </section>
-     </div>
+     </div> -->
 
 
-     <div class="user-box fifeth-box">
+     <!-- <div class="user-box fifeth-box">
       <div class="row top" style="width:100%">
         <div class="col">
           <div class="list">
@@ -384,10 +315,15 @@
           </div><a class="btn primary" href="#">View all pages</a>
         </div>
       </div>
-     </div>
+     </div> -->
     </div>
    
     <!--  -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg7oBC2RvzcTTEFuAjVZl9W3BeBHYlGEc&callback=initMap&v=weekly"
+      async
+    ></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
@@ -399,9 +335,10 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
    <script src="https://codepen.io/milesmanners/pen/XgYOPy.js"></script>
    <!-- end -->
+   <script src="{% static 'js/googlemaps.js' %}"></script>
     <script src="{% static 'js/dash.js' %}"></script>
     <script src="{% static 'js/dash2.js' %}"></script>
-    <script src="{% static 'dash3.js' %}"></script>
-    <script src="{% static 'bar.js' %}"></script>
+    <script src="{% static 'js/dash3.js' %}"></script>
+    <script src="{% static 'js/bar.js' %}"></script>
 </body>
 </html>
