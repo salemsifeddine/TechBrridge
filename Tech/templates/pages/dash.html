@@ -351,5 +351,20 @@
     <script src="{% static 'js/dash3.js' %}"></script>
     <script src="{% static 'js/bar.js' %}"></script>
     <script src="{% static 'js/ws.js' %}"></script>
+    <script  >
+      const socket = new WebSocket("ws://127.0.0.1:8000/ws/someurl/")
+
+      var datas=""
+      socket.onmessage =  ({data})=>{
+          document.write(data)
+          
+      }
+
+      document.querySelector(".btnsend").addEventListener("click",function(){
+          socket.send("hello")
+          // document.write(datas)
+      })
+      var data= JSON.parse(event.data)
+    </script>
 </body>
 </html>
