@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "Tech"
+    "channels",
+    "Tech",
+    
 ]
 
 MIDDLEWARE = [
@@ -55,6 +57,8 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "sesame.backends.ModelBackend",
 ]
+
+SESAME_MAX_AGE = 30
 
 ROOT_URLCONF = 'BridgeTechWebsite.urls'
 
@@ -75,6 +79,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'BridgeTechWebsite.wsgi.application'
+ASGI_APPLICATION = 'BridgeTechWebsite.asgi.application'
 
 
 # Database
