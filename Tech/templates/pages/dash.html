@@ -102,7 +102,6 @@
       </div>
       <div class="discount card" style="--delay: .4s">
        <div class="title"><i class="fas fa-gas-pump"></i>Fuel Level</div>
-       <button class="btnsend">send</button>
        <div class="discount-wrapper">
         <div class="discount-info">
          <div class="subtitle">Data took at :</div>
@@ -357,7 +356,7 @@
        
       var datas=""
       socket.onmessage =  ({data})=>{
-          document.write(JSON.parse(data).message)
+          {% comment %} document.write(JSON.parse(data).message) {% endcomment %}
           console.log(data)
       }
 
