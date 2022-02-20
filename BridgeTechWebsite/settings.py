@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "channels",
-    'ws4redis',
     "Tech",
     
 ]
@@ -74,60 +73,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
             ],
         },
     },
 ]
 
-
-# redis
-# CHANNEL_LAYERS = {
-#     'default': {
-#         ### Method 1: Via redis lab
-#         # 'BACKEND': 'channels_redis.core.RedisChannelLayer',
-#         # 'CONFIG': {
-#         #     "hosts": [
-#         #       'redis://h:<password>;@<redis Endpoint>:<port>' 
-#         #     ],
-#         # },
-
-#         ### Method 2: Via local Redis
-#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
-#         'CONFIG': {
-#              "hosts": [('0.0.0.0', 8080)],
-#         },
-
-#         ### Method 3: Via In-memory channel layer
-#         ## Using this method.
-#         # "BACKEND": "channels.layers.InMemoryChannelLayer"
-#     },
-# }
-WS4REDIS_SUBSCRIBER = 'myapp.subscriber.RedisSubscriber'
-WSGI_APPLICATION = 'ws4redis.django_runserver.application'
-# WSGI_APPLICATION = 'BridgeTechWebsite.wsgi.application'
+WSGI_APPLICATION = 'BridgeTechWebsite.wsgi.application'
 ASGI_APPLICATION = 'BridgeTechWebsite.asgi.application'
 
-
-
-
-WEBSOCKET_URL = '/ws/'
-WS4REDIS_CONNECTION = {
-    'host': 'localhost',
-    'port': 8080,
-    'db': 17,
-    'password': 'verysecret',
-}
-TEMPLATE_CONTEXT_PROCESSORS = (
-    
-    'django.contrib.auth.context_processors.auth',
-    # Django <=1.8:
-    'django.core.context_processors.static',
-    # Django >= 1.9:
-    # 'django.template.context_processors.static',
-    'ws4redis.context_processors.default',
-    ...
-)
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

@@ -2,6 +2,7 @@ import asyncio
 from datetime import datetime
 import math
 
+# HOST = "vps3kwan7.oct-xpd1.xyz"
 HOST = "localhost"
 PORT = 8080
 
@@ -71,6 +72,6 @@ async def simulate():
         await asyncio.sleep(1)
 
 
-# task = asyncio.get_event_loop().create_task(simulate())
+task = asyncio.get_event_loop().create_task(simulate())
 
-# asyncio.get_event_loop().run_forever()
+asyncio.get_event_loop().run_forever()

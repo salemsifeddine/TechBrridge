@@ -5,11 +5,15 @@ from django.contrib.auth import  authenticate
 from django.contrib.auth import login as auth_login
 from django.shortcuts import redirect
 # Create your views here.
-
-
+import time
+from time import *
+from . import hw_sim
 
 
 def main(request):
+    
+   
+
     return render(request,"pages/dash.html",{})
 
 def chooseCar(request):
