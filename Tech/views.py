@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 # Create your views here.
 import time
 from time import *
-from . import hw_sim
+# from . import hw_sim
 
 
 def main(request):
