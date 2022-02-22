@@ -66,7 +66,7 @@ var options = {
 
 setInterval(() => {
 		setInterval(() => {
-		data["labels"].push(Math.floor(Math.random()*203));
+		data["labels"]=appendarraygraph;
 		data["datasets"][0]["data"].push(Math.floor(Math.random()*100))
 		
 	}, 500);

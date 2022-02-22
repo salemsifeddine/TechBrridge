@@ -328,6 +328,9 @@
     </div>
    
     <!--  -->
+    <script>
+      var appendarraygraph=[]
+    </script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg7oBC2RvzcTTEFuAjVZl9W3BeBHYlGEc&callback=initMap&v=weekly"
       async
@@ -350,21 +353,6 @@
     <script src="{% static 'js/dash3.js' %}"></script>
     <script src="{% static 'js/bar.js' %}"></script>
     <script src="{% static 'js/ws.js' %}"></script>
-    <script  >
-  {% comment %} 0.0.0.0:8080       {% endcomment %}
-      const socket = new WebSocket("ws://localhost:8000/ws/someurl/")
-       
-      var datas=""
-      socket.onmessage =  ({data})=>{
-          {% comment %} document.write(JSON.parse(data).message) {% endcomment %}
-          console.log(data)
-      }
-
-      document.querySelector(".btnsend").addEventListener("click",function(){
-          socket.send("hello")
-       
-      })
-      
-    </script>
+    
 </body>
 </html>
