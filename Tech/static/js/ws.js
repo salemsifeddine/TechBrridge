@@ -14,10 +14,8 @@ socket.onerror =  ({data})=>{
 }
 
 socket.onopen =  ()=>{
-    var obj={}
-    obj["ClientId"]="ClientId"
-    obj["CarId"]="CarId"
-    var datasend=`carId:carid,clientId:clientId`
+   
+    var datasend=`234,122`
 
     JSON.stringify(datasend)
 
