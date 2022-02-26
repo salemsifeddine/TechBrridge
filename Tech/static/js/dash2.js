@@ -65,11 +65,13 @@ var options = {
 };
 
 setInterval(() => {
-		setInterval(() => {
-		data["labels"]=appendarraygraph;
-		data["datasets"][0]["data"].push(Math.floor(Math.random()*100))
+		 
+			const d = new Date();
+			let minutes = d.getSeconds();
+		data["labels"].push(minutes);
+		data["datasets"][0]["data"]=appendarraygraph
 		
-	}, 500);
+ 
 	var chartInstance = new Chart(chart, {
 		type: 'line',
 		data: data,
@@ -78,6 +80,9 @@ setInterval(() => {
 
 	
 },3000);
+document.querySelector(".rangetime").addEventListener("click",function(){
+	data["labels"]=[]
+})
 
 document.querySelector(".offer-button").addEventListener("click",function(){
 	var randomvv=Math.random()*100
