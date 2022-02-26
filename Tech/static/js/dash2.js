@@ -7,7 +7,7 @@ gradient.addColorStop(1, 'rgba(0, 199, 214, 0)');
 
 
 var data  = {
-    labels: [ '11', '12', '13', '14', '15', '16', '17','18','19','20', '21','22' ],
+    labels: [],
     datasets: [{
 			label: 'Applications',
 			backgroundColor: gradient,
@@ -77,7 +77,7 @@ setInterval(() => {
 	});
 
 	
-},2500);
+},3000);
 
 document.querySelector(".offer-button").addEventListener("click",function(){
 	var randomvv=Math.random()*100
@@ -112,3 +112,4 @@ document.querySelector('.menu-button').addEventListener('click', function () {
 document.querySelector('.close-menu').addEventListener('click', function () {
     document.querySelector('.app-left').classList.remove('show');
 });
+

@@ -9,6 +9,7 @@ socket.onmessage =  ({data})=>{
     // document.write([data])
     // appendarraygraph.append(parseInt(data))
     console.log(appendarraygraph)
+   
     
 }
 socket.onerror =  ({data})=>{
@@ -30,7 +31,7 @@ document.querySelector(".rangetime").addEventListener("click",function(){
     var rangetime=document.querySelector("#selcrng").value
     socket.close();
     const socket1 = new WebSocket("ws://localhost:8081")
-    
+    appendarraygraph=[]
     socket1.onopen =  ()=>{
    
         var datasend=`car1,client1,${rangetime}`
@@ -39,6 +40,13 @@ document.querySelector(".rangetime").addEventListener("click",function(){
     
         socket1.send(datasend)
         document.querySelector(".chart-container-header span").textContent = rangetime
+    }
+    socket1.onmessage =  ({data})=>{
+        appendarraygraph.push(data)
+        // document.write([data])
+        // appendarraygraph.append(parseInt(data))
+        console.log(appendarraygraph)
+        
     }
 })
 
