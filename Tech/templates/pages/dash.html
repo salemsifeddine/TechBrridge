@@ -338,6 +338,7 @@
     <script>
       
       var appendarraygraph=[]
+       var randomsec="";
        
       
     </script>
@@ -356,13 +357,18 @@
    <script src="https://codepen.io/milesmanners/pen/WOeOrV.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
    <script src="https://codepen.io/milesmanners/pen/XgYOPy.js"></script>
+   
    <!-- end -->
    <script src="{% static 'js/googlemaps.js' %}"></script>
     <script src="{% static 'js/dash.js' %}"></script>
     <script src="{% static 'js/dash2.js' %}"></script>
     <script src="{% static 'js/dash3.js' %}"></script>
     <script src="{% static 'js/bar.js' %}"></script>
+    <script>
+      const socket = new WebSocket("ws://localhost:8081")
+    </script>
     <script src="{% static 'js/ws.js' %}"></script>
+    
     
     
 </body>
